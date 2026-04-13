@@ -1,0 +1,633 @@
+/* Modern CSS Variables */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --border-color: #e2e8f0;
+    --background-hover: #f8fafc;
+    --error-color: #dc2626;
+    --success-color: #16a34a;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form Container */
+.form-container {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    max-width: 850px;
+    width: 100%;
+}
+
+.tax-wide {
+    max-width: 850px;
+}
+
+/* Form Header */
+.form-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-header h1 {
+    font-size: 1.875rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.form-header h2 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.form-header h3 {
+    font-size: 0.875rem;
+    margin: 0 0 1rem 0;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.form-header p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+}
+
+.form-section h2,
+.form-section h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.section-description {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    margin: 0 0 1.5rem 0;
+}
+
+/* Form Row & Group */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    cursor: pointer;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background-color: #ffffff;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Radio Button Grid */
+.radio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background-color: #ffffff;
+    position: relative;
+}
+
+.radio-option:hover {
+    background-color: var(--background-hover);
+    border-color: var(--primary-color);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.radio-option:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.radio-option input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    width: 1.125rem;
+    height: 1.125rem;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.radio-option span {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    user-select: none;
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-group label {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Helper Text */
+.helper-text {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* SSN masking effect */
+input[type="password"] {
+    letter-spacing: 0.15em;
+    font-family: 'Courier New', monospace;
+}
+
+/* Buttons */
+.submit-btn,
+.reset-btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn {
+    background-color: var(--text-muted);
+    color: white;
+}
+
+.reset-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Security Note */
+.security-note {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f0fdf4;
+    border-left: 4px solid var(--success-color);
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    color: #166534;
+    line-height: 1.6;
+}
+
+.security-note a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.security-note a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .form-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .form-section h2,
+    .form-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .radio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .submit-btn,
+    .reset-btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+        align-items: flex-start;
+        min-height: auto;
+    }
+
+    .form-container {
+        padding: 1rem;
+        border-radius: var(--radius-md);
+    }
+
+    .form-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .form-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .form-header h2 {
+        font-size: 1rem;
+    }
+
+    .form-header h3 {
+        font-size: 0.75rem;
+    }
+
+    .form-section {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .form-row {
+        gap: 0.75rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    input[type="password"],
+    select,
+    textarea {
+        font-size: 1rem;
+        padding: 0.625rem;
+    }
+
+    .submit-btn,
+    .reset-btn {
+        padding: 0.625rem 1.5rem;
+        font-size: 0.95rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Federal Reserve Watermark Styles */
+.federal-watermark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.03;
+    background-image:
+        radial-gradient(circle at 20% 80%, #1e40af 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, #1e40af 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, #dc2626 1px, transparent 1px),
+        radial-gradient(circle at 60% 90%, #dc2626 1px, transparent 1px),
+        radial-gradient(circle at 90% 60%, #1e40af 1px, transparent 1px);
+    background-size: 100px 100px, 120px 120px, 80px 80px, 90px 90px, 110px 110px;
+    background-position: 0 0, 20px 20px, 40px 40px, 60px 60px, 80px 80px;
+}
+
+.federal-watermark::before {
+    content: "FEDERAL RESERVE SYSTEM";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 72px;
+    font-weight: 900;
+    color: #1e40af;
+    opacity: 0.02;
+    letter-spacing: 8px;
+    white-space: nowrap;
+    font-family: 'Times New Roman', serif;
+}
+
+.federal-seal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.1;
+    background: radial-gradient(circle, #1e40af 30%, transparent 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #1e40af;
+    font-weight: bold;
+    border: 2px solid #1e40af;
+}
+
+.federal-seal::before {
+    content: "FRS";
+    font-family: 'Times New Roman', serif;
+}
+
+.federal-footer {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #64748b;
+    opacity: 0.6;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 1px;
+}
+
+.federal-footer::before {
+    content: "AUTHORIZED BY THE FEDERAL RESERVE SYSTEM • ";
+}
+
+.federal-header-accent {
+    position: relative;
+    overflow: hidden;
+}
+
+.federal-header-accent::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1e40af 0%, #dc2626 50%, #1e40af 100%);
+    opacity: 0.8;
+}
+
+.federal-border-accent {
+    border-left: 4px solid #1e40af !important;
+    position: relative;
+}
+
+.federal-border-accent::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #1e40af 0%, #dc2626 50%, #1e40af 100%);
+}
+
+/* Enhanced form styling with federal theme */
+.form-container {
+    position: relative;
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    max-width: 850px;
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid #1e40af;
+}
+
+.form-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #1e40af;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.form-header::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #1e40af 0%, #dc2626 50%, #1e40af 100%);
+}
+
+/* Federal themed buttons */
+.federal-btn {
+    background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.federal-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.federal-btn:hover::before {
+    left: 100%;
+}
+
+.federal-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    box-shadow: 0 6px 12px rgba(30, 64, 175, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Security badge styling */
+.security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.security-badge::before {
+    content: "🔒";
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .federal-watermark::before {
+        font-size: 48px;
+    }
+
+    .federal-seal {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+}

